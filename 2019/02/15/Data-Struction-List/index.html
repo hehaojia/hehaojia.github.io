@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="Name Insert Access Search Delete Comments     Array O(n) O(1) O(n) O(n) Insertion to the end is O(1). Details here.   (Hash)Map O(1)* O(1)* O(1)* O(1)* Rehashing might affect insertion time. Detail">
+  <meta name="description" content="List：双向链表 list就是双向链表,元素也是在堆中存放,每个元素都是放在一块内存中,它的内存空间可以是不连续的，通过指针来进行数据的访问，这个特点使得它的随机存取变的非常没有效率，因此它没有提供[]操作符的重载。但由于链表的特点，它可以以很好的效率支持任意地方的删除和插入。  list没有空间预留习惯,所以每分配一个元素都会从内存中分配,每删除一个元素都会释放它占用的内存.  list在哪里">
 <meta name="keywords" content="Data Structures">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Time Complexity">
-<meta property="og:url" content="http://yoursite.com/2019/01/07/algTime/index.html">
+<meta property="og:title" content="Data Struction-List">
+<meta property="og:url" content="http://yoursite.com/2019/02/15/Data-Struction-List/index.html">
 <meta property="og:site_name" content="HEHJ&#39;S BLOG">
-<meta property="og:description" content="Name Insert Access Search Delete Comments     Array O(n) O(1) O(n) O(n) Insertion to the end is O(1). Details here.   (Hash)Map O(1)* O(1)* O(1)* O(1)* Rehashing might affect insertion time. Detail">
+<meta property="og:description" content="List：双向链表 list就是双向链表,元素也是在堆中存放,每个元素都是放在一块内存中,它的内存空间可以是不连续的，通过指针来进行数据的访问，这个特点使得它的随机存取变的非常没有效率，因此它没有提供[]操作符的重载。但由于链表的特点，它可以以很好的效率支持任意地方的删除和插入。  list没有空间预留习惯,所以每分配一个元素都会从内存中分配,每删除一个元素都会释放它占用的内存.  list在哪里">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-01-07T16:30:29.858Z">
+<meta property="og:updated_time" content="2019-02-20T02:26:11.393Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Time Complexity">
-<meta name="twitter:description" content="Name Insert Access Search Delete Comments     Array O(n) O(1) O(n) O(n) Insertion to the end is O(1). Details here.   (Hash)Map O(1)* O(1)* O(1)* O(1)* Rehashing might affect insertion time. Detail">
+<meta name="twitter:title" content="Data Struction-List">
+<meta name="twitter:description" content="List：双向链表 list就是双向链表,元素也是在堆中存放,每个元素都是放在一块内存中,它的内存空间可以是不连续的，通过指针来进行数据的访问，这个特点使得它的随机存取变的非常没有效率，因此它没有提供[]操作符的重载。但由于链表的特点，它可以以很好的效率支持任意地方的删除和插入。  list没有空间预留习惯,所以每分配一个元素都会从内存中分配,每删除一个元素都会释放它占用的内存.  list在哪里">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/01/07/algTime/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/15/Data-Struction-List/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>Time Complexity | HEHJ'S BLOG</title>
+  <title>Data Struction-List | HEHJ'S BLOG</title>
   
 
 
@@ -306,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/07/algTime/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/15/Data-Struction-List/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="hehaojia">
@@ -323,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Time Complexity
+          <h1 class="post-title" itemprop="name headline">Data Struction-List
 
               
             
@@ -349,7 +349,7 @@
                 
               
 
-              <time title="Created: 2019-01-07 16:16:16" itemprop="dateCreated datePublished" datetime="2019-01-07T16:16:16+08:00">2019-01-07</time>
+              <time title="Created: 2019-02-15 11:34:45" itemprop="dateCreated datePublished" datetime="2019-02-15T11:34:45+08:00">2019-02-15</time>
             
 
             
@@ -366,7 +366,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-01-08 00:30:29" itemprop="dateModified" datetime="2019-01-08T00:30:29+08:00">2019-01-08</time>
+                <time title="Modified: 2019-02-20 10:26:11" itemprop="dateModified" datetime="2019-02-20T10:26:11+08:00">2019-02-20</time>
               
             
           </span>
@@ -397,7 +397,7 @@
 
           
           
-             <span id="/2019/01/07/algTime/" class="leancloud_visitors" data-flag-title="Time Complexity">
+             <span id="/2019/02/15/Data-Struction-List/" class="leancloud_visitors" data-flag-title="Data Struction-List">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -428,116 +428,37 @@
       
 
       
-        <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Insert</th>
-<th>Access</th>
-<th>Search</th>
-<th>Delete</th>
-<th>Comments</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Array</td>
-<td>O(n)</td>
-<td>O(1)</td>
-<td>O(n)</td>
-<td>O(n)</td>
-<td>Insertion to the end is O(1). Details here.</td>
-</tr>
-<tr>
-<td>(Hash)Map</td>
-<td>O(1)*</td>
-<td>O(1)*</td>
-<td>O(1)*</td>
-<td>O(1)*</td>
-<td>Rehashing might affect insertion time. Details here.</td>
-</tr>
-<tr>
-<td>Map (using Binary Search Tree)</td>
-<td>O(log(n))</td>
-<td>-</td>
-<td>O(log(n))</td>
-<td>O(log(n))</td>
-<td>Implemented using Binary Search Tree</td>
-</tr>
-<tr>
-<td>Set (using HashMap)</td>
-<td>O(1)*</td>
-<td>-</td>
-<td>O(1)*</td>
-<td>O(1)*</td>
-<td>Set using a HashMap implementation. Details here.</td>
-</tr>
-<tr>
-<td>Set (using list)</td>
-<td>O(n)</td>
-<td>-</td>
-<td>O(n)]</td>
-<td>O(n)</td>
-<td>Implemented using Binary Search Tree</td>
-</tr>
-<tr>
-<td>Set (using Binary Search Tree)</td>
-<td>O(log(n))</td>
-<td>-</td>
-<td>O(log(n))</td>
-<td>O(log(n))</td>
-<td>Implemented using Binary Search Tree</td>
-</tr>
-<tr>
-<td>Linked List (singly)</td>
-<td>O(n)</td>
-<td>-</td>
-<td>O(n)</td>
-<td>O(n)</td>
-<td>Adding/Removing to the start of the list is O(1). Details here.</td>
-</tr>
-<tr>
-<td>Linked List (doubly)</td>
-<td>O(n)</td>
-<td>-</td>
-<td>O(n)</td>
-<td>O(n)</td>
-<td>Adding/Deleting from the beginning/end is O(1). But, deleting/adding from the middle is O(n). Details here</td>
-</tr>
-<tr>
-<td>Stack (array implementation)</td>
-<td>O(1)</td>
-<td>-</td>
-<td>-</td>
-<td>O(1)</td>
-<td>Insert/delete is last-in, first-out (LIFO)</td>
-</tr>
-<tr>
-<td>Queue (naive array impl.)</td>
-<td>O(n)</td>
-<td>-</td>
-<td>-</td>
-<td>O(1)</td>
-<td>Insert (Array.shift) is O(n)</td>
-</tr>
-<tr>
-<td>Queue (array implementation)</td>
-<td>O(1)*</td>
-<td>-</td>
-<td>-</td>
-<td>O(1)</td>
-<td>Worst time insert is O(n). However amortized is O(1)</td>
-</tr>
-<tr>
-<td>Queue (list implementation)</td>
-<td>O(1)</td>
-<td>-</td>
-<td>-</td>
-<td>O(1)</td>
-<td>Using Doubly Linked List with reference to the last element.</td>
-</tr>
-</tbody>
-</table>
+        <h1 id="List：双向链表"><a href="#List：双向链表" class="headerlink" title="List：双向链表"></a>List：双向链表</h1><p> list就是双向链表,元素也是在堆中存放,每个元素都是放在一块内存中,它的内存空间可以是不连续的，通过指针来进行数据的访问，这个特点使得它的随机存取变的非常没有效率，因此它没有提供[]操作符的重载。但由于链表的特点，它可以以很好的效率支持任意地方的删除和插入。</p>
+<p> list没有空间预留习惯,所以每分配一个元素都会从内存中分配,每删除一个元素都会释放它占用的内存.</p>
+<p> list在哪里添加删除元素性能都很高,不需要移动内存,当然也不需要对每个元素都进行构造与析构了,所以常用来做随机操作容器.<br> 但是访问list里面的元素时就开始和最后访问最快<br> 访问其它元素都是O(n) ,所以如果需要经常随机访问的话,还是使用其它的好</p>
+<p><strong><em>总结</em></strong><br> 如果你喜欢经常添加删除大对象的话,那么请使用list<br> 要保存的对象不大,构造与析构操作不复杂,那么可以使用vector代替<br> list&lt;指针&gt;完全是性能最低的做法,这种情况下还是使用vector&lt;指针&gt;好,因为指针没有构造与析构,也不占用很大内存.</p>
+<hr>
+<p>1.vector      底层数据结构为数组 ，支持快速随机访问</p>
+<p>2.list            底层数据结构为双向链表，支持快速增删</p>
+<p>3.deque       底层数据结构为一个中央控制器和多个缓冲区，详细见STL源码剖析P146，支持首尾（中间不能）快速增删，也支持随机访问<br>deque是一个双端队列(double-ended queue)，也是在堆中保存内容的.它的保存形式如下:<br>[堆1] –&gt; [堆2] –&gt;[堆3] –&gt; …<br>每个堆保存好几个元素,然后堆和堆之间有指针指向,看起来像是list和vector的结合品.</p>
+<p>4.stack        底层一般用list或deque实现，封闭头部即可，不用vector的原因应该是容量大小有限制，扩容耗时</p>
+<p>5.queue     底层一般用list或deque实现，封闭头部即可，不用vector的原因应该是容量大小有限制，扩容耗时</p>
+<p>（stack和queue其实是适配器,而不叫容器，因为是对容器的再封装）</p>
+<p>6.priority_queue     的底层数据结构一般为vector为底层容器，堆heap为处理规则来管理底层容器实现</p>
+<p>7.set                   底层数据结构为红黑树，有序，不重复</p>
+<p>8.multiset         底层数据结构为红黑树，有序，可重复 </p>
+<p>9.map                底层数据结构为红黑树，有序，不重复</p>
+<p>10.multimap    底层数据结构为红黑树，有序，可重复</p>
+<p>11.hash_set     底层数据结构为hash表，无序，不重复</p>
+<p>12.hash_multiset 底层数据结构为hash表，无序，可重复 </p>
+<p>13.hash_map    底层数据结构为hash表，无序，不重复</p>
+<p>14.hash_multimap 底层数据结构为hash表，无序，可重复 </p>
+<p>迭代器模式的定义是：设计一种方法，使得依据某种顺序遍历容器时，容器内部的具体结构是不可见的。C++ STL中，迭代器的本质就是指针，但是这个指针在不同场合是有区别的：</p>
+<ul>
+<li><p>对vector::iterator而言，迭代器是指向vector某元素的指针，和T a*差不多；对于list和slist而言，迭代器指向链表节点；对map和set等基于二叉搜索树的容器而言，迭代器可以看成是指向treenode的指针。因此STL迭代器大致可分为两种，一种是连续地址空间的，一种是非连续地址空间的。然而不管是哪一种，在遍历过程中修改容器的内容绝对是大忌中的大忌！</p>
+</li>
+<li><p>对vector而言，插入删除操作往往包含着malloc、realloc操作，一旦空间重塑了，原来的迭代器也将失效，如再理所应当地it++，你的it就不知道跑哪里去了。</p>
+</li>
+<li><p>对list而言，虽然it++仅仅意味着p=p-&gt;next，但如果list的内容改变，此next还是不是彼next可就说不好了。</p>
+</li>
+<li><p>对于map和set，it的遍历是遵循二叉搜索树中序遍历顺序的（即有序遍历），it++找的是右子树的最左边，reverse_it++找的是左子树的最右边，随随便便插入删除，既有可能影响迭代器的遍历。 </p>
+</li>
+</ul>
 
       
     </div>
@@ -574,8 +495,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/04/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2019/01/23/Design Pattern-Memento/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
@@ -584,8 +505,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/07/Design Pattern-Template/" rel="prev" title="Template模式">
-                Template模式 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/20/Data-Struction-Vector/" rel="prev" title="Data Struction-Vector">
+                Data Struction-Vector <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -631,8 +552,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -706,6 +636,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#List：双向链表"><span class="nav-number">1.</span> <span class="nav-text">List：双向链表</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       

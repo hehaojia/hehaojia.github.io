@@ -96,25 +96,25 @@
 
 
 
-  <meta name="description" content="List：双向链表 list就是双向链表,元素也是在堆中存放,每个元素都是放在一块内存中,它的内存空间可以是不连续的，通过指针来进行数据的访问，这个特点使得它的随机存取变的非常没有效率，因此它没有提供[]操作符的重载。但由于链表的特点，它可以以很好的效率支持任意地方的删除和插入。  list没有空间预留习惯,所以每分配一个元素都会从内存中分配,每删除一个元素都会释放它占用的内存.  list在哪里">
+  <meta name="description" content="LeetCode 234请判断一个链表是否为回文链表。  示例 1: 12输入: 1-&amp;gt;2输出: false  示例 2: 12输入: 1-&amp;gt;2-&amp;gt;2-&amp;gt;1输出: true   解决参照之前练习题：查找中间节点 和 反转列表 应用结合起来：12345678910111213141516171819202122232425262728293031323334353637383">
 <meta name="keywords" content="Data Structures">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Data Struction-List">
-<meta property="og:url" content="http://yoursite.com/2019/02/15/Data-Struction-List/index.html">
+<meta property="og:title" content="LeetCode-List">
+<meta property="og:url" content="http://yoursite.com/2019/07/14/Data-Struction-List-Leetcode/index.html">
 <meta property="og:site_name" content="Hehaojia&#39;s Blog">
-<meta property="og:description" content="List：双向链表 list就是双向链表,元素也是在堆中存放,每个元素都是放在一块内存中,它的内存空间可以是不连续的，通过指针来进行数据的访问，这个特点使得它的随机存取变的非常没有效率，因此它没有提供[]操作符的重载。但由于链表的特点，它可以以很好的效率支持任意地方的删除和插入。  list没有空间预留习惯,所以每分配一个元素都会从内存中分配,每删除一个元素都会释放它占用的内存.  list在哪里">
+<meta property="og:description" content="LeetCode 234请判断一个链表是否为回文链表。  示例 1: 12输入: 1-&amp;gt;2输出: false  示例 2: 12输入: 1-&amp;gt;2-&amp;gt;2-&amp;gt;1输出: true   解决参照之前练习题：查找中间节点 和 反转列表 应用结合起来：12345678910111213141516171819202122232425262728293031323334353637383">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-07-14T13:16:04.263Z">
+<meta property="og:updated_time" content="2019-07-14T13:17:07.125Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Data Struction-List">
-<meta name="twitter:description" content="List：双向链表 list就是双向链表,元素也是在堆中存放,每个元素都是放在一块内存中,它的内存空间可以是不连续的，通过指针来进行数据的访问，这个特点使得它的随机存取变的非常没有效率，因此它没有提供[]操作符的重载。但由于链表的特点，它可以以很好的效率支持任意地方的删除和插入。  list没有空间预留习惯,所以每分配一个元素都会从内存中分配,每删除一个元素都会释放它占用的内存.  list在哪里">
+<meta name="twitter:title" content="LeetCode-List">
+<meta name="twitter:description" content="LeetCode 234请判断一个链表是否为回文链表。  示例 1: 12输入: 1-&amp;gt;2输出: false  示例 2: 12输入: 1-&amp;gt;2-&amp;gt;2-&amp;gt;1输出: true   解决参照之前练习题：查找中间节点 和 反转列表 应用结合起来：12345678910111213141516171819202122232425262728293031323334353637383">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/15/Data-Struction-List/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/14/Data-Struction-List-Leetcode/">
 
 
 
@@ -124,7 +124,7 @@
   };
 </script>
 
-  <title>Data Struction-List | Hehaojia's Blog</title>
+  <title>LeetCode-List | Hehaojia's Blog</title>
   
 
 
@@ -306,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/15/Data-Struction-List/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/14/Data-Struction-List-Leetcode/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -323,7 +323,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Data Struction-List
+          <h1 class="post-title" itemprop="name headline">LeetCode-List
 
               
             
@@ -351,24 +351,12 @@
                 
               
 
-              <time title="Created: 2019-02-15 11:34:45" itemprop="dateCreated datePublished" datetime="2019-02-15T11:34:45+08:00">2019-02-15</time>
+              <time title="Created: 2019-07-14 21:09:53 / Modified: 21:17:07" itemprop="dateCreated datePublished" datetime="2019-07-14T21:09:53+08:00">2019-07-14</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-07-14 21:16:04" itemprop="dateModified" datetime="2019-07-14T21:16:04+08:00">2019-07-14</time>
               
             
           </span>
@@ -399,7 +387,7 @@
 
           
           
-             <span id="/2019/02/15/Data-Struction-List/" class="leancloud_visitors" data-flag-title="Data Struction-List">
+             <span id="/2019/07/14/Data-Struction-List-Leetcode/" class="leancloud_visitors" data-flag-title="LeetCode-List">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -430,37 +418,16 @@
       
 
       
-        <h1 id="List：双向链表"><a href="#List：双向链表" class="headerlink" title="List：双向链表"></a>List：双向链表</h1><p> list就是双向链表,元素也是在堆中存放,每个元素都是放在一块内存中,它的内存空间可以是不连续的，通过指针来进行数据的访问，这个特点使得它的随机存取变的非常没有效率，因此它没有提供[]操作符的重载。但由于链表的特点，它可以以很好的效率支持任意地方的删除和插入。</p>
-<p> list没有空间预留习惯,所以每分配一个元素都会从内存中分配,每删除一个元素都会释放它占用的内存.</p>
-<p> list在哪里添加删除元素性能都很高,不需要移动内存,当然也不需要对每个元素都进行构造与析构了,所以常用来做随机操作容器.<br> 但是访问list里面的元素时就开始和最后访问最快<br> 访问其它元素都是O(n) ,所以如果需要经常随机访问的话,还是使用其它的好</p>
-<p><strong><em>总结</em></strong><br> 如果你喜欢经常添加删除大对象的话,那么请使用list<br> 要保存的对象不大,构造与析构操作不复杂,那么可以使用vector代替<br> list&lt;指针&gt;完全是性能最低的做法,这种情况下还是使用vector&lt;指针&gt;好,因为指针没有构造与析构,也不占用很大内存.</p>
-<hr>
-<p>1.vector      底层数据结构为数组 ，支持快速随机访问</p>
-<p>2.list            底层数据结构为双向链表，支持快速增删</p>
-<p>3.deque       底层数据结构为一个中央控制器和多个缓冲区，详细见STL源码剖析P146，支持首尾（中间不能）快速增删，也支持随机访问<br>deque是一个双端队列(double-ended queue)，也是在堆中保存内容的.它的保存形式如下:<br>[堆1] –&gt; [堆2] –&gt;[堆3] –&gt; …<br>每个堆保存好几个元素,然后堆和堆之间有指针指向,看起来像是list和vector的结合品.</p>
-<p>4.stack        底层一般用list或deque实现，封闭头部即可，不用vector的原因应该是容量大小有限制，扩容耗时</p>
-<p>5.queue     底层一般用list或deque实现，封闭头部即可，不用vector的原因应该是容量大小有限制，扩容耗时</p>
-<p>（stack和queue其实是适配器,而不叫容器，因为是对容器的再封装）</p>
-<p>6.priority_queue     的底层数据结构一般为vector为底层容器，堆heap为处理规则来管理底层容器实现</p>
-<p>7.set                   底层数据结构为红黑树，有序，不重复</p>
-<p>8.multiset         底层数据结构为红黑树，有序，可重复 </p>
-<p>9.map                底层数据结构为红黑树，有序，不重复</p>
-<p>10.multimap    底层数据结构为红黑树，有序，可重复</p>
-<p>11.hash_set     底层数据结构为hash表，无序，不重复</p>
-<p>12.hash_multiset 底层数据结构为hash表，无序，可重复 </p>
-<p>13.hash_map    底层数据结构为hash表，无序，不重复</p>
-<p>14.hash_multimap 底层数据结构为hash表，无序，可重复 </p>
-<p>迭代器模式的定义是：设计一种方法，使得依据某种顺序遍历容器时，容器内部的具体结构是不可见的。C++ STL中，迭代器的本质就是指针，但是这个指针在不同场合是有区别的：</p>
+        <h1 id="LeetCode-234"><a href="#LeetCode-234" class="headerlink" title="LeetCode 234"></a>LeetCode 234</h1><p>请判断一个链表是否为回文链表。</p>
 <ul>
-<li><p>对vector::iterator而言，迭代器是指向vector某元素的指针，和T a*差不多；对于list和slist而言，迭代器指向链表节点；对map和set等基于二叉搜索树的容器而言，迭代器可以看成是指向treenode的指针。因此STL迭代器大致可分为两种，一种是连续地址空间的，一种是非连续地址空间的。然而不管是哪一种，在遍历过程中修改容器的内容绝对是大忌中的大忌！</p>
+<li><p>示例 1:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 1-&gt;2</span><br><span class="line">输出: false</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>对vector而言，插入删除操作往往包含着malloc、realloc操作，一旦空间重塑了，原来的迭代器也将失效，如再理所应当地it++，你的it就不知道跑哪里去了。</p>
-</li>
-<li><p>对list而言，虽然it++仅仅意味着p=p-&gt;next，但如果list的内容改变，此next还是不是彼next可就说不好了。</p>
-</li>
-<li><p>对于map和set，it的遍历是遵循二叉搜索树中序遍历顺序的（即有序遍历），it++找的是右子树的最左边，reverse_it++找的是左子树的最右边，随随便便插入删除，既有可能影响迭代器的遍历。 </p>
+<li><p>示例 2:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: 1-&gt;2-&gt;2-&gt;1</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+<p>解决参照之前练习题：查找中间节点 和 反转列表 应用结合起来：<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:    </span><br><span class="line">    <span class="function">ListNode* <span class="title">reverseList</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head==<span class="literal">NULL</span>||head-&gt;next==<span class="literal">NULL</span>)</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        ListNode *p=reverseList(head-&gt;next);</span><br><span class="line">        head-&gt;next-&gt;next=head;</span><br><span class="line">        head-&gt;next=<span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">return</span> p;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function">ListNode* <span class="title">middleNode</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="literal">NULL</span>)</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        </span><br><span class="line">        ListNode *slow = head;</span><br><span class="line">        ListNode *fast = head;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (fast &amp;&amp; fast-&gt;next)&#123;</span><br><span class="line">            slow = slow-&gt;next;</span><br><span class="line">            fast = fast-&gt;next-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> slow;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">        ListNode *mid =  middleNode(head);</span><br><span class="line">        ListNode *slow = reverseList(mid);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(head&amp;&amp;slow)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(head-&gt;val!=slow-&gt;val)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                head=head-&gt;next;</span><br><span class="line">                slow=slow-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -497,8 +464,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/07/Design Pattern-Template/" rel="next" title="Template模式">
-                <i class="fa fa-chevron-left"></i> Template模式
+              <a href="/2019/02/27/shadowsocks/" rel="next" title="shadowsocks">
+                <i class="fa fa-chevron-left"></i> shadowsocks
               </a>
             
           </div>
@@ -506,10 +473,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/20/Data-Struction-Vector/" rel="prev" title="Data Struction-Vector">
-                Data Struction-Vector <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -653,7 +616,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#List：双向链表"><span class="nav-number">1.</span> <span class="nav-text">List：双向链表</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LeetCode-234"><span class="nav-number">1.</span> <span class="nav-text">LeetCode 234</span></a></li></ol></div>
             
 
           </div>

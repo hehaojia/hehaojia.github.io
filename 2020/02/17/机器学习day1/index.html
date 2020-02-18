@@ -96,24 +96,27 @@
 
 
 
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="监督学习无监督学习代价函数代价函数衡量的是模型预测值h(θ) 与标准答案y之间的差异，所以总的代价函数J是h(θ)和y的函数，即J=f(h(θ), y)。又因为y都是训练样本中给定的，h(θ)由θ决定，所以，最终还是模型参数θ的改变导致了J的改变。对于不同的θ，对应不同的预测值h(θ)，也就对应着不同的代价函数J的取值。变化过程为：θ−−&amp;gt;h(θ)−−&amp;gt;J(θ)。θ引起了h(θ)的改变">
+<meta name="keywords" content="Machine Learning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World AND Markdown">
-<meta property="og:url" content="http://yoursite.com/2019/01/04/hello-world/index.html">
+<meta property="og:title" content="Day1:监督学习-无监督学习-代价函数">
+<meta property="og:url" content="http://yoursite.com/2020/02/17/机器学习day1/index.html">
 <meta property="og:site_name" content="Hehaojia&#39;s Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="监督学习无监督学习代价函数代价函数衡量的是模型预测值h(θ) 与标准答案y之间的差异，所以总的代价函数J是h(θ)和y的函数，即J=f(h(θ), y)。又因为y都是训练样本中给定的，h(θ)由θ决定，所以，最终还是模型参数θ的改变导致了J的改变。对于不同的θ，对应不同的预测值h(θ)，也就对应着不同的代价函数J的取值。变化过程为：θ−−&amp;gt;h(θ)−−&amp;gt;J(θ)。θ引起了h(θ)的改变">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-02-14T15:17:33.805Z">
+<meta property="og:image" content="http://yoursite.com/2020/02/17/机器学习day1/img/ML_cost_function.png">
+<meta property="og:updated_time" content="2020-02-17T14:24:26.015Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World AND Markdown">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="Day1:监督学习-无监督学习-代价函数">
+<meta name="twitter:description" content="监督学习无监督学习代价函数代价函数衡量的是模型预测值h(θ) 与标准答案y之间的差异，所以总的代价函数J是h(θ)和y的函数，即J=f(h(θ), y)。又因为y都是训练样本中给定的，h(θ)由θ决定，所以，最终还是模型参数θ的改变导致了J的改变。对于不同的θ，对应不同的预测值h(θ)，也就对应着不同的代价函数J的取值。变化过程为：θ−−&amp;gt;h(θ)−−&amp;gt;J(θ)。θ引起了h(θ)的改变">
+<meta name="twitter:image" content="http://yoursite.com/2020/02/17/机器学习day1/img/ML_cost_function.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/01/04/hello-world/">
+  <link rel="canonical" href="http://yoursite.com/2020/02/17/机器学习day1/">
 
 
 
@@ -123,7 +126,7 @@
   };
 </script>
 
-  <title>Hello World AND Markdown | Hehaojia's Blog</title>
+  <title>Day1:监督学习-无监督学习-代价函数 | Hehaojia's Blog</title>
   
 
 
@@ -305,7 +308,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/04/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/17/机器学习day1/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -322,7 +325,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World AND Markdown
+          <h1 class="post-title" itemprop="name headline">Day1:监督学习-无监督学习-代价函数
 
               
             
@@ -350,29 +353,35 @@
                 
               
 
-              <time title="Created: 2019-01-04 09:18:49" itemprop="dateCreated datePublished" datetime="2019-01-04T09:18:49+08:00">2019-01-04</time>
+              <time title="Created: 2020-02-17 18:37:22 / Modified: 22:24:26" itemprop="dateCreated datePublished" datetime="2020-02-17T18:37:22+08:00">2020-02-17</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2020-02-14 23:17:33" itemprop="dateModified" datetime="2020-02-14T23:17:33+08:00">2020-02-14</time>
               
             
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/机器学习/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a></span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -380,7 +389,7 @@
 
           
           
-             <span id="/2019/01/04/hello-world/" class="leancloud_visitors" data-flag-title="Hello World AND Markdown">
+             <span id="/2020/02/17/机器学习day1/" class="leancloud_visitors" data-flag-title="Day1:监督学习-无监督学习-代价函数">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -411,24 +420,19 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-<h2 id="Markdown简介"><a href="#Markdown简介" class="headerlink" title="Markdown简介"></a>Markdown简介</h2><blockquote>
-<p>Markdown 是一种轻量级标记语言，它允许人们使用易读易写的纯文本格式编写文档，然后转换成格式丰富的HTML页面。    —— <a href="https://zh.wikipedia.org/wiki/Markdown" target="_blank" rel="noopener">维基百科</a></p>
-</blockquote>
-<p>正如您在阅读的这份文档，它使用简单的符号标识不同的标题，将某些文字标记为<strong>粗体</strong>或者<em>斜体</em>，创建一个<a href="http://www.example.com" target="_blank" rel="noopener">链接</a>或一个脚注[^demo]。下面列举了几个高级功能，更多语法请按<code>Ctrl + /</code>查看帮助。 </p>
-<h3 id="LaTeX-公式"><a href="#LaTeX-公式" class="headerlink" title="LaTeX 公式"></a>LaTeX 公式</h3><p>可以创建行内公式，例如 $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$。或者块级公式：</p>
-<p>$$    x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$</p>
-<h3 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: Start</span><br><span class="line">e=&gt;end</span><br><span class="line">op=&gt;operation: My Operation</span><br><span class="line">cond=&gt;condition: Yes or No?</span><br><span class="line"></span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br></pre></td></tr></table></figure>
-<p>以及时序图:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Alice-&gt;Bob: Hello Bob, how are you?</span><br><span class="line">Note right of Bob: Bob thinks</span><br><span class="line">Bob--&gt;Alice: I am good thanks!</span><br></pre></td></tr></table></figure>
+        <h2 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h2><h2 id="无监督学习"><a href="#无监督学习" class="headerlink" title="无监督学习"></a>无监督学习</h2><h2 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h2><p>代价函数衡量的是模型预测值h(θ) 与标准答案y之间的差异，所以总的代价函数J是h(θ)和y的函数，即J=f(h(θ), y)。又因为y都是训练样本中给定的，h(θ)由θ决定，所以，最终还是模型参数θ的改变导致了J的改变。对于不同的θ，对应不同的预测值h(θ)，也就对应着不同的代价函数J的取值。变化过程为：<code>θ−−&gt;h(θ)−−&gt;J(θ)</code>。θ引起了h(θ)的改变，进而改变了J(θ)的取值。</p>
+<p>在线性回归中，最常用的是均方误差(Mean squared error)，具体形式为：</p>
+<ul>
+<li>假设函数 Hypothesis：<br>$$ h_{\theta }(x) = \theta _{0}+\theta _{1}x $$</li>
+<li>参数 Parameters:<br>$$ \theta _{0},\theta _{1} $$</li>
+<li>代价函数 Cost Function：<br>$$  J(\theta _{0},\theta <em>{1})= \frac{1}{2m}\cdot\sum</em>{i=1}^{m}(h_{\theta }(x^{i})-y^{i})^{2} $$</li>
+<li><p>目的 Goal:<br>$$ \texttt{minimize } J(\theta _{0},\theta _{1}) $$<br>得到均方误差。</p>
+<ul>
+<li>举个简单的例子，假设 $ \theta _{0} = 0 $：有训练样本{(0, 0), (1, 1), (2, 2), (4, 4)}，即4对训练样本，每个样本对中第1个数表示x的值，第2个数表示y的值。这几个点很明显都是y=x这条直线上的点。如下左图： <img src="./img/ML_cost_function.png" alt="ML_cost_function"></li>
+</ul>
+</li>
+</ul>
+
       
     </div>
 
@@ -449,6 +453,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+          
+        </div>
+      
 
       
       
@@ -458,15 +468,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2020/02/16/Tensorflow-gpu安装问题/" rel="next" title="Day0:Tensorflow-gpu安装">
+                <i class="fa fa-chevron-left"></i> Day0:Tensorflow-gpu安装
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/07/algTime/" rel="prev" title="Time Complexity">
-                Time Complexity <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -614,7 +624,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown简介"><span class="nav-number">2.</span> <span class="nav-text">Markdown简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LaTeX-公式"><span class="nav-number">2.1.</span> <span class="nav-text">LaTeX 公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流程图"><span class="nav-number">2.2.</span> <span class="nav-text">流程图</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#监督学习"><span class="nav-number">1.</span> <span class="nav-text">监督学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#无监督学习"><span class="nav-number">2.</span> <span class="nav-text">无监督学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代价函数"><span class="nav-number">3.</span> <span class="nav-text">代价函数</span></a></li></ol></div>
             
 
           </div>

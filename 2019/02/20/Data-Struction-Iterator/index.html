@@ -456,6 +456,7 @@
 <ul>
 <li>表1所示为不同容器的迭代器的功能。</li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -498,6 +499,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>表1：不同容器的迭代器的功能</p>
 <p>例如，<code>vector</code> 的迭代器是随机迭代器，因此遍历 <code>vector</code> 容器有以下几种做法。下面的程序中，每个循环演示了一种做法。</p>
 <p>【实例】遍历 vector 容器。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;vector&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    vector&lt;int&gt; v(100); //v被初始化成有100个元素</span><br><span class="line">    for(int i = 0;i &lt; v.size() ; ++i) //size返回元素个数</span><br><span class="line">        cout &lt;&lt; v[i]; //像普通数组一样使用vector容器</span><br><span class="line">    vector&lt;int&gt;::iterator i;</span><br><span class="line">    for(i = v.begin(); i != v.end (); ++i) //用 != 比较两个迭代器</span><br><span class="line">        cout &lt;&lt; * i;</span><br><span class="line">    for(i = v.begin(); i &lt; v.end ();++i) //用 &lt; 比较两个迭代器</span><br><span class="line">        cout &lt;&lt; * i;</span><br><span class="line">    i = v.begin();</span><br><span class="line">    while(i &lt; v.end()) &#123; //间隔一个输出</span><br><span class="line">        cout &lt;&lt; * i;</span><br><span class="line">        i += 2; // 随机访问迭代器支持 &quot;+= 整数&quot;  的操作</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -947,6 +949,13 @@
   
 
   
+  
+
+  
+  
+
+  
+
 
   
 

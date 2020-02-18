@@ -105,7 +105,7 @@
 <meta property="og:description" content="监督学习无监督学习代价函数代价函数衡量的是模型预测值h(θ) 与标准答案y之间的差异，所以总的代价函数J是h(θ)和y的函数，即J=f(h(θ), y)。又因为y都是训练样本中给定的，h(θ)由θ决定，所以，最终还是模型参数θ的改变导致了J的改变。对于不同的θ，对应不同的预测值h(θ)，也就对应着不同的代价函数J的取值。变化过程为：θ−−&amp;gt;h(θ)−−&amp;gt;J(θ)。θ引起了h(θ)的改变">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2020/02/17/机器学习day1/ML_cost_function.png">
-<meta property="og:updated_time" content="2020-02-18T07:38:28.847Z">
+<meta property="og:updated_time" content="2020-02-18T11:29:09.672Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Day1:监督学习-无监督学习-代价函数">
 <meta name="twitter:description" content="监督学习无监督学习代价函数代价函数衡量的是模型预测值h(θ) 与标准答案y之间的差异，所以总的代价函数J是h(θ)和y的函数，即J=f(h(θ), y)。又因为y都是训练样本中给定的，h(θ)由θ决定，所以，最终还是模型参数θ的改变导致了J的改变。对于不同的θ，对应不同的预测值h(θ)，也就对应着不同的代价函数J的取值。变化过程为：θ−−&amp;gt;h(θ)−−&amp;gt;J(θ)。θ引起了h(θ)的改变">
@@ -370,7 +370,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2020-02-18 15:38:28" itemprop="dateModified" datetime="2020-02-18T15:38:28+08:00">2020-02-18</time>
+                <time title="Modified: 2020-02-18 19:29:09" itemprop="dateModified" datetime="2020-02-18T19:29:09+08:00">2020-02-18</time>
               
             
           </span>
@@ -435,10 +435,11 @@
         <h2 id="监督学习"><a href="#监督学习" class="headerlink" title="监督学习"></a>监督学习</h2><h2 id="无监督学习"><a href="#无监督学习" class="headerlink" title="无监督学习"></a>无监督学习</h2><h2 id="代价函数"><a href="#代价函数" class="headerlink" title="代价函数"></a>代价函数</h2><p>代价函数衡量的是模型预测值h(θ) 与标准答案y之间的差异，所以总的代价函数J是h(θ)和y的函数，即J=f(h(θ), y)。又因为y都是训练样本中给定的，h(θ)由θ决定，所以，最终还是模型参数θ的改变导致了J的改变。对于不同的θ，对应不同的预测值h(θ)，也就对应着不同的代价函数J的取值。变化过程为：<code>θ−−&gt;h(θ)−−&gt;J(θ)</code>。θ引起了h(θ)的改变，进而改变了J(θ)的取值。</p>
 <p>在线性回归中，最常用的是均方误差(Mean squared error)，具体形式为：</p>
 <ul>
-<li>假设函数 Hypothesis：<br>$$ h_{\theta }(x) = \theta _{0}+\theta _{1}x $$</li>
-<li>参数 Parameters:<br>$$ \theta _{0},\theta _{1} $$</li>
-<li>代价函数 Cost Function：<br>$$  J(\theta _{0},\theta <em>{1})= \frac{1}{2m}\cdot\sum</em>{i=1}^{m}(h_{\theta }(x^{i})-y^{i})^{2} $$</li>
-<li><p>目的 Goal:<br>$$ \texttt{minimize } J(\theta _{0},\theta _{1}) $$<br>得到均方误差。</p>
+<li>假设函数 Hypothesis：<script type="math/tex; mode=display">h_{\theta }(x) = \theta _{0}+\theta _{1}x</script></li>
+<li>参数 Parameters:<script type="math/tex; mode=display">\theta _{0},\theta _{1}</script></li>
+<li>代价函数 Cost Function：<script type="math/tex; mode=display">J(\theta _{0},\theta _{1})= \frac{1}{2m}\cdot\sum_{i=1}^{m}(h_{\theta }(x^{i})-y^{i})^{2}</script></li>
+<li><p>目的 Goal:</p>
+<script type="math/tex; mode=display">\texttt{minimize } J(\theta _{0},\theta _{1})</script><p>得到均方误差。</p>
 <ul>
 <li>举个简单的例子，假设 $ \theta _{0} = 0 $：有训练样本{(0, 0), (1, 1), (2, 2), (4, 4)}，即4对训练样本，每个样本对中第1个数表示x的值，第2个数表示y的值。这几个点很明显都是y=x这条直线上的点。如下左图： <img src="/2020/02/17/机器学习day1/ML_cost_function.png" alt="ML_cost_function"></li>
 </ul>
@@ -877,6 +878,50 @@
   
 
   
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+      for (i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+  overflow: auto hidden;
+}
+</style>
+
+    
+  
+
 
   
 

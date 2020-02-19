@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Day2矩阵-向量</title>
+    <url>/2020/02/20/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0day3/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Day2:梯度下降</title>
     <url>/2020/02/18/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0day2/</url>
     <content><![CDATA[<h2 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h2><blockquote>

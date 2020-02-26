@@ -1,15 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Day3多元梯度下降法</title>
-    <url>/2020/02/26/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0day3/</url>
+    <title>Linear Algebra with Application</title>
+    <url>/2020/02/24/Linear-Algebra-with-Application/</url>
+    <content><![CDATA[<blockquote>
+<p><a href="https://www.nctucs.org/study/linear/steven/instructorsmanualleon7edpart3.pdf" target="_blank" rel="noopener">Linear Algebra with application 7th answer - Steven J.Leon</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>线性代数</category>
+      </categories>
+      <tags>
+        <tag>Linear Algebra</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Day3:多元梯度下降法</title>
+    <url>/2020/02/20/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0day3/</url>
     <content><![CDATA[<blockquote>
 <p><a href="https://zhuanlan.zhihu.com/p/108247059" target="_blank" rel="noopener">吴恩达 AI 完整课程资源全汇总下载!</a></p>
+</blockquote>
 <h2 id="多元梯度下降法"><a href="#多元梯度下降法" class="headerlink" title="多元梯度下降法"></a>多元梯度下降法</h2><ul>
 <li>多元梯度下降法：使用梯度下降法来处理多变量线性回归(多元线性回归)。</li>
 </ul>
-</blockquote>
-<h2 id="多元梯度下降运算中的实用技巧（均用于优化梯度下降，最终目的均是使下降速度变得更快）"><a href="#多元梯度下降运算中的实用技巧（均用于优化梯度下降，最终目的均是使下降速度变得更快）" class="headerlink" title="多元梯度下降运算中的实用技巧（均用于优化梯度下降，最终目的均是使下降速度变得更快）"></a>多元梯度下降运算中的实用技巧（均用于优化梯度下降，最终目的均是使下降速度变得更快）</h2><h3 id="特征缩放"><a href="#特征缩放" class="headerlink" title="特征缩放"></a>特征缩放</h3><ul>
+<h2 id="多元梯度下降运算中的实用技巧"><a href="#多元梯度下降运算中的实用技巧" class="headerlink" title="多元梯度下降运算中的实用技巧"></a>多元梯度下降运算中的实用技巧</h2><p>（均用于优化梯度下降，最终目的均是使下降速度变得更快）</p>
+<h3 id="特征缩放"><a href="#特征缩放" class="headerlink" title="特征缩放"></a>特征缩放</h3><ul>
 <li>特征缩放的作用：使梯度下降的速度变得更快，则收敛所需的迭代次数便更少，这就是特征缩放。</li>
 </ul>
 <h4 id="首先讨论什么情况下需要特征缩放"><a href="#首先讨论什么情况下需要特征缩放" class="headerlink" title="首先讨论什么情况下需要特征缩放"></a>首先讨论什么情况下需要特征缩放</h4><ol>
@@ -29,20 +44,6 @@
       </categories>
       <tags>
         <tag>Machine Learning</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Linear Algebra with Application</title>
-    <url>/2020/02/24/Linear-Algebra-with-Application/</url>
-    <content><![CDATA[<blockquote>
-<p><a href="https://www.nctucs.org/study/linear/steven/instructorsmanualleon7edpart3.pdf" target="_blank" rel="noopener">Linear Algebra with application 7th answer - Steven J.Leon</a></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>线性代数</category>
-      </categories>
-      <tags>
-        <tag>Linear Algebra</tag>
       </tags>
   </entry>
   <entry>

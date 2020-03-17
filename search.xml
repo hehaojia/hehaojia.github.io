@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Excel-页合并</title>
+    <url>/2020/03/16/Excel-%E9%A1%B5%E5%90%88%E5%B9%B6/</url>
+    <content><![CDATA[<h1 id="Excel—-合并多个-Excel-工作簿至一个工作簿中的工作表"><a href="#Excel—-合并多个-Excel-工作簿至一个工作簿中的工作表" class="headerlink" title="Excel—-合并多个 Excel 工作簿至一个工作簿中的工作表"></a>Excel—-合并多个 Excel 工作簿至一个工作簿中的工作表</h1><h2 id="多个工作簿合并到一个工作簿"><a href="#多个工作簿合并到一个工作簿" class="headerlink" title="多个工作簿合并到一个工作簿"></a>多个工作簿合并到一个工作簿</h2><p>在由多个工作簿合并到一个工作表之前，需要把多个工作簿合并到一个工作簿。</p>
+<p>1、新建一个工作薄，将其命名为合并后的名字，例如叫做：汇总工作簿。<br>2、打开此工作簿：“汇总工作簿”<br>3、在“汇总工作簿”下任一个工作表标签上点击右键，选择“查看代码”。<br>4、在打开的VBA编辑窗口中粘贴以下代码：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Sub 工作薄间工作表合并()</span><br><span class="line">Dim FileOpen</span><br><span class="line">Dim X As Integer</span><br><span class="line">Application.ScreenUpdating = False</span><br><span class="line">FileOpen = Application.GetOpenFilename(FileFilter:=&quot;Microsoft Excel文件(.xlsx),.xlsx&quot;, MultiSelect:=True, Title:=&quot;合并工作薄&quot;)</span><br><span class="line">X = 1</span><br><span class="line">While X &lt;= UBound(FileOpen)</span><br><span class="line">Workbooks.Open Filename:=FileOpen(X)</span><br><span class="line">Sheets().Move After:=ThisWorkbook.Sheets(ThisWorkbook.Sheets.Count)</span><br><span class="line">X = X + 1</span><br><span class="line">Wend</span><br><span class="line">ExitHandler:</span><br><span class="line">Application.ScreenUpdating = True</span><br><span class="line">Exit Sub</span><br><span class="line">errhadler:</span><br><span class="line">MsgBox Err.Description</span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure></p>
+<p>5、关闭该VBA编辑窗口<br>6、在Excel中，开发工具—-宏,选“工作薄间工作表合并”,然后“执行”。<br>7、在打开的对话窗口中，选择你要合并的多个工作薄。<br>8、等待运行。而后就OK了。<br>9、打开名为“汇总工作簿”的Excel文件，我们就能看到多个其他工作簿以多个Sheet页的形式合并到了这一个工作簿中。</p>
+<h2 id="多个工作表合成一个工作表"><a href="#多个工作表合成一个工作表" class="headerlink" title="多个工作表合成一个工作表"></a>多个工作表合成一个工作表</h2><p>在“汇总工作簿”工作簿中，有很多个Sheet页，我们的最终目的是把这多个Sheet页合并到一个Sheet页的多行。其操作办法如下：<br>1、在“汇总工作簿”中，新建一个sheet页。<br>2、在新建的sheet标签上单击右键，选择“查看代码”<br>3、在打开的VBA编辑窗口中粘贴以下代码：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Sub 合并当前工作簿下的所有工作表()</span><br><span class="line">Application.ScreenUpdating = False</span><br><span class="line">For j = 1 To Sheets.Count</span><br><span class="line">If Sheets(j).Name &lt;&gt; ActiveSheet.Name Then</span><br><span class="line">X = Range(&quot;A65536&quot;).End(xlUp).Row + 1</span><br><span class="line">Sheets(j).UsedRange.Copy Cells(X, 1)</span><br><span class="line">End If</span><br><span class="line">Next</span><br><span class="line">Range(&quot;B1&quot;).Select</span><br><span class="line">Application.ScreenUpdating = True</span><br><span class="line">MsgBox &quot;当前工作簿下的全部工作表已经合并完毕！&quot;, vbInformation, &quot;提示&quot;</span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure></p>
+<p>4、关闭该VBA编辑窗口<br>5、在Excel中，开发工具—-宏,选“合并当前工作簿下的所有工作表”,然后“执行”。<br>6、等待运行，而后就OK了。</p>
+<h2 id="目录生成"><a href="#目录生成" class="headerlink" title="目录生成"></a>目录生成</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Sub getAllWorkSheets()</span><br><span class="line">&apos; 得到所有的sheet页名称，并加上超连接</span><br><span class="line">    totalNum = Worksheets.Count</span><br><span class="line">    Sheet1.Activate</span><br><span class="line">    Range(&quot;a:a&quot;).Select</span><br><span class="line">   Selection.NumberFormatLocal = &quot;@&quot;</span><br><span class="line"></span><br><span class="line">&apos;从2开始就是不带&quot;目录&quot;Sheet页，如果要带，则从1开始</span><br><span class="line">    For index_i = 1 To totalNum</span><br><span class="line">        sheetName = Worksheets(index_i).Name</span><br><span class="line">        Cells(index_i, 1) = sheetName</span><br><span class="line">        tar_sheet = &quot;&apos;&quot; &amp; sheetName &amp; &quot;&apos;&quot;</span><br><span class="line">        Cells(index_i, 1).Select</span><br><span class="line">        ActiveSheet.Hyperlinks.Add Anchor:=Selection, Address:=&quot;&quot;, SubAddress:= _</span><br><span class="line">        tar_sheet &amp; &quot;!A1&quot;, TextToDisplay:=sheetName</span><br><span class="line">    Next index_i</span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Daily Work</category>
+      </categories>
+      <tags>
+        <tag>Excel</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linear Algebra with Application</title>
     <url>/2020/02/24/Linear-Algebra-with-Application/</url>
     <content><![CDATA[<blockquote>
@@ -15,7 +31,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Day3:多元梯度下降法</title>
+    <title>Day3:多元梯度下降法-学习率a</title>
     <url>/2020/02/20/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0day3/</url>
     <content><![CDATA[<blockquote>
 <p><a href="https://zhuanlan.zhihu.com/p/108247059" target="_blank" rel="noopener">吴恩达 AI 完整课程资源全汇总下载!</a></p>
@@ -37,6 +53,19 @@
 <li>-1和1这两个数字并不是太重要。比如说有一个特征值x_1的取值范围在0到3之间，非常接近-1到+1的范围之内这没问题。如果还有另外一个特征值x_2的取值范围在-2到+0.5之间，这也非常接近-1到+1的范围之内这也没问题。但如果说有另外一个特征值x_3它的取值范围在-100到+100之间，那么它和-1到+1的范围就有很多差异了，所以这个便是范围不是太合适的特征。</li>
 <li>如果特征值在非常非常小的范围之内的话，比如说一个特征值x_4的取值范围在-0.0001到+0.0001之间的话，那么这便是比-1到+1小得多的范围，因此同样认为这个特征值的范围不合适。所以可能认可的范围也许可以大于+1或者小于+1，但是也别相差太大，比如+100，也别太小，比如刚才所述的+0.001。</li>
 <li>可以一般这么考虑，特征值的取值范围在-3到+3的范围之内是可以接受的，如果某个特征值的取值范围大于-3到+3的范围的话，就需要注意了。比如某个特征值的取值范围在-1/3到+1/3之间 或 0到+1/3之间 或 -1/3到0之间的话，可以认为都可以接受的。比如前面所述的特征值x_4的取值范围在-0.0001到+0.0001之间就需要重新考虑了。</li>
+</ol>
+<h2 id="学习率a"><a href="#学习率a" class="headerlink" title="学习率a"></a>学习率a</h2><ol>
+<li>如果学习率a过小，可能收敛的速度会很慢，则造成梯度下降算法的迭代次数需要非常多次才能到达最低点。</li>
+<li>如果学习率a过大的话，可能收敛的速度过于太快，则造成代价函数J(θ)值可能不会在每次迭代之后都下降，甚至反而可能在上升，最终无法收敛。</li>
+<li><p>如果学习率a过大的话，也可能会出现收敛的速度很慢，但更加常见的是每次迭代之后代价函数J(θ)值都并不会下降。</p>
+</li>
+<li><p>解决方法和步骤：</p>
+<ul>
+<li>在运行梯度下降算法时，通常可以尝试一系列学习率a值，比如说每隔10倍取一个值，即0.001-&gt;0.01-&gt;0.1-&gt;1-&gt;…等。然后对于这些不同的学习率a值，绘制代价函数J(θ)随迭代次数不断增加而J(θ)值不断变化的曲线图。最终选择一个可以使代价函数J(θ)值快速下降的学习率a值。</li>
+<li>事实上，通常并不仅可以是每隔10倍取一个值作为学习率a值，还可以每隔3倍取一个值作为学习率a值.比如 0.001-&gt;0.003-&gt;0.01-&gt;0.03-&gt;0.1-&gt;0.3-&gt;1-&gt;…等。可以这么看，0.001-&gt;0.003增加3倍，0.003-&gt;0.01则大约增加3倍多一点，而0.01-&gt;0.03又增加3倍，而0.03-&gt;0.1则又大约增加3倍多一点，以此类推。</li>
+</ul>
+</li>
+<li>所以可以尝试一系列学习率a值，那么便可以找到最小值(比如0.001)，再找到另外一个最大值(比如1)，然后可以取最大值或者比最大值略小一些的比较合理的值，通常这样做便可以为梯度下降算法找到一个合适的学习率a。</li>
 </ol>
 ]]></content>
       <categories>

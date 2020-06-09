@@ -1,6 +1,264 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>物联网协议</title>
+    <url>/2020/06/09/%E7%89%A9%E8%81%94%E7%BD%91%E5%8D%8F%E8%AE%AE/</url>
+    <content><![CDATA[<h1 id="CoAP协议"><a href="#CoAP协议" class="headerlink" title="CoAP协议"></a>CoAP协议</h1><p>受限应用协议(CoAP)是一种专门针对受限设备的Internet应用协议，定义在RFC 7252中。它使那些被称为“节点”的受限设备能够使用类似的协议与更广泛的Internet通信。</p>
+<h2 id="协议识别规则"><a href="#协议识别规则" class="headerlink" title="协议识别规则"></a>协议识别规则</h2><p>CoAP是一个完整的二进制应用层协议，默认运行在UDP上，端口为5683和5684。<br>CoAP数据包格式<br>如果省略令牌、选项和有效负载，最小的CoAP消息长度为4字节。CoAP使用简单的二进制基本头格式，利用了两种消息类型:请求和响应。基本标头后面可以跟着优化的类型-长度-值格式的选项。CoAP默认绑定到UDP，也可以绑定到DTLS，提供了高水平的通信安全性。</p>
+<h2 id="CoAP首部"><a href="#CoAP首部" class="headerlink" title="CoAP首部"></a>CoAP首部</h2><p><img src="/2020/06/09/物联网协议/coap_header.png" alt="coap_header"><br>•    【Ver】版本编号。<br>•    【T】报文类型，CoAP协议定了4种不同形式的报文，CON报文，NON报文，ACK报文和RST报文。<br>•    【TKL】CoAP标识符长度。CoAP协议中具有两种功能相似的标识符，一种为Message ID(报文编号)，一种为Token(标识符)。其中每个报文均包含消息编号，但是标识符对于报文来说是非必须的。<br>•    【Code】功能码/响应码。Code在CoAP请求报文和响应报文中具有不同的表现形式，Code占一个字节，它被分成了两部分，前3位一部分，后5位一部分，为了方便描述它被写成了c.dd结构。其中0.XX表示CoAP请求的某种方法，而2.XX、4.XX或5.XX则表示CoAP响应的某种具体表现。<br>•    【Message ID】报文编号。<br>•    【Token】标识符具体内容，通过TKL指定Token长度。<br>•    【Option】报文选项，通过报文选项可设定CoAP主机，CoAP URI，CoAP请求参数和负载媒体类型等等。<br>•    【1111 1111B】CoAP报文和具体负载之间的分隔符。<br>Code请求方法<br>•    GET：获取资源<br>•    POST：创建资源<br>•    PUT：更新资源<br>•    DELETE：删除资源</p>
+<h2 id="考虑解析字段"><a href="#考虑解析字段" class="headerlink" title="考虑解析字段"></a>考虑解析字段</h2><p>•    报文类型(type)<br>•    功能码(code)<br>•    报文编码(message ID)</p>
+<h1 id="MQTT协议"><a href="#MQTT协议" class="headerlink" title="MQTT协议"></a>MQTT协议</h1><p>协议就是通信双方的一个约定。在MQTT协议中，一个MQTT数据包由：固定头（Fixed header）、 可变头（Variable header）、 消息体（payload）三部分构成。</p>
+<h2 id="协议识别规则-1"><a href="#协议识别规则-1" class="headerlink" title="协议识别规则"></a>协议识别规则</h2><p>端口1883，ssl-mqtt默认端口为8883。</p>
+<h2 id="MQTT-数据包结构"><a href="#MQTT-数据包结构" class="headerlink" title="MQTT 数据包结构"></a>MQTT 数据包结构</h2><p>•    固定头（Fixed header），存在于所有MQTT数据包中，表示数据包类型及数据包的分组类标识<br>•    可变头（Variable header），存在于部分MQTT数据包中，数据包类型决定了可变头是否存在及其具体内容<br>•    消息体（Payload），存在于部分MQTT数据包中，表示客户端收到的具体内容</p>
+<h3 id="1-MQTT固定头"><a href="#1-MQTT固定头" class="headerlink" title="1 MQTT固定头"></a>1 MQTT固定头</h3><p>固定头存在于所有MQTT数据包中，其结构如下：<br><img src="/2020/06/09/物联网协议/mqtt_header.png" alt="mqtt_header"></p>
+<h4 id="1-1-MQTT数据包类型"><a href="#1-1-MQTT数据包类型" class="headerlink" title="1.1 MQTT数据包类型"></a>1.1 MQTT数据包类型</h4><p>相于一个4位的无符号值，类型如下：<br><img src="/2020/06/09/物联网协议/mqtt_stru.png" alt="mqtt_structure"></p>
+<h4 id="1-2-标识位"><a href="#1-2-标识位" class="headerlink" title="1.2 标识位"></a>1.2 标识位</h4><p>固定报头第1个字节的剩余的4位 [3-0]包含每个MQTT控制报文类型特定的标志。</p>
+<h4 id="1-3-剩余长度（Remaining-Length）"><a href="#1-3-剩余长度（Remaining-Length）" class="headerlink" title="1.3 剩余长度（Remaining Length）"></a>1.3 剩余长度（Remaining Length）</h4><p>位置：从第2个字节开始。<br>剩余长度（Remaining Length）表示当前报文剩余部分的字节数，包括可变报头和负载的数据。剩余长度不包括用于编码剩余长度字段本身的字节数。</p>
+<h3 id="2-MQTT可变头"><a href="#2-MQTT可变头" class="headerlink" title="2 MQTT可变头"></a>2 MQTT可变头</h3><p>MQTT数据包中包含一个可变头，它驻位于固定的头和负载之间。可变头的内容因数据包类型而不同，较常的应用是做为包的标识：<br><img src="/2020/06/09/物联网协议/mqtt_header_changable.png" alt="mqtt_header2"><br>很多类型数据包中都包括一个2字节的数据包标识字段，这些类型的包有：PUBLISH (QoS &gt; 0)、PUBACK、PUBREC、PUBREL、PUBCOMP、SUBSCRIBE、SUBACK、UNSUBSCRIBE、UNSUBACK</p>
+<h3 id="3-有效载荷-Payload"><a href="#3-有效载荷-Payload" class="headerlink" title="3  有效载荷 Payload"></a>3  有效载荷 Payload</h3><p>有效载荷Payload位MQTT数据包的第三部分，CONNECT、SUBSCRIBE、SUBACK、UNSUBSCRIBE四种类型的消息<br>有消息体：<br>•    CONNECT，消息体内容主要是：客户端的ClientID、订阅的Topic、Message以及用户名和密码。<br>•    SUBSCRIBE，消息体内容是一系列的要订阅的主题以及QoS。<br>•    SUBACK，消息体内容是服务器对于SUBSCRIBE所申请的主题及QoS进行确认和回复。<br>•    UNSUBSCRIBE，消息体内容是要订阅的主题。</p>
+<h2 id="考虑解析字段-1"><a href="#考虑解析字段-1" class="headerlink" title="考虑解析字段"></a>考虑解析字段</h2><p>•    控制报文的类型<br>•    消息体</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>操作系统</title>
+    <url>/2020/06/09/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<h1 id="计算机操作系统"><a href="#计算机操作系统" class="headerlink" title="计算机操作系统"></a>计算机操作系统</h1><h2 id="一-操作系统引论"><a href="#一-操作系统引论" class="headerlink" title="一.操作系统引论"></a>一.操作系统引论</h2><h3 id="1-操作系统的目标和功能"><a href="#1-操作系统的目标和功能" class="headerlink" title="1.操作系统的目标和功能"></a>1.操作系统的目标和功能</h3><ul>
+<li>目标<ul>
+<li>方便性</li>
+<li>有效性<ul>
+<li>提高系统资源利用率</li>
+<li>提高系统吞吐量</li>
+</ul>
+</li>
+<li>可扩充性</li>
+<li>开放性</li>
+</ul>
+</li>
+<li>作用<ul>
+<li>OS作为用户与计算机硬件系统之间的接口<ul>
+<li>命令方式</li>
+<li>系统调用方式</li>
+<li>图标–窗口方式</li>
+</ul>
+</li>
+<li>OS实现了对计算机资源的抽象<h3 id="2-操作系统的发展过程"><a href="#2-操作系统的发展过程" class="headerlink" title="2.操作系统的发展过程"></a>2.操作系统的发展过程</h3></li>
+</ul>
+</li>
+<li><p>未配置操作系统的计算机系统</p>
+<ul>
+<li><p>人工操作方式</p>
+<ul>
+<li><blockquote>
+<p>用户独占全机 CPU等待人工操作 严重降低了计算机资源的利用率</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>脱机输入/输出(Off–Line I/O)方式</p>
+<ul>
+<li><blockquote>
+<p>减少了CPU的空闲时间 提高了I/O速度 效率仍然不理想</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>单道批处理系统</p>
+</li>
+<li>多道批处理系统</li>
+<li><blockquote>
+<p>1.资源利用率高</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>2.系统吞吐量大</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>3.平均周转时间长</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>4.无交互能力</p>
+</blockquote>
+<ul>
+<li>(宏观并行，微观串行)</li>
+</ul>
+</li>
+<li>分时系统</li>
+<li><blockquote>
+<p>特征:</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>1.多路性</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>2.独立性</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>3.及时性</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>4.交互性</p>
+</blockquote>
+</li>
+<li><p>实时系统</p>
+</li>
+<li>集群系统–超算~云计算</li>
+<li>微机操作系统的发展<h3 id="3-操作系统的基本特征"><a href="#3-操作系统的基本特征" class="headerlink" title="3.操作系统的基本特征"></a>3.操作系统的基本特征</h3></li>
+<li><p>1.并发concurrence</p>
+<ul>
+<li><p>区别并行和并发</p>
+<ul>
+<li><blockquote>
+<p>并行性是指两个或多个事件在同一时刻发生→宏观并行，微观并行</p>
+</blockquote>
+</li>
+<li><blockquote>
+<p>并发性是指两个或多个事件在同一时间间隔内发生→宏观并行，微观串行</p>
+</blockquote>
+<ul>
+<li>并发是进程宏观一起运行，微观上交替运行，而并行是指同时运行</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>引入进程<ul>
+<li><blockquote>
+<p>进程是指在系统中能独立运行并作为资源分配的基本单位，它是由一组机器指令，数据和堆栈等组成的，是一个能独立运行的活动实体</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>2.共享sharing</p>
+<ul>
+<li>1.互斥共享方式</li>
+<li>2.同时访问方式</li>
+<li>并发和共享是多用户(多任务)OS的两个最基本的特征。它们又是互为存在的条件</li>
+</ul>
+</li>
+<li>3.虚拟virtual<ul>
+<li>时分复用技术</li>
+<li>空分复用技术</li>
+</ul>
+</li>
+<li>4.异步asynchronism<h3 id="4-操作系统的主要功能"><a href="#4-操作系统的主要功能" class="headerlink" title="4.操作系统的主要功能"></a>4.操作系统的主要功能</h3></li>
+<li>1.处理机管理功能<ul>
+<li>进程控制</li>
+<li>进程同步<ul>
+<li>进程互斥方式</li>
+<li>进程同步方式(协同)</li>
+</ul>
+</li>
+<li>进程通信</li>
+<li>调度<ul>
+<li>作业调度</li>
+<li>进程调度</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>2.存储器管理功能<ul>
+<li>内存分配<ul>
+<li>静态分配</li>
+<li>动态分配</li>
+</ul>
+</li>
+<li>内存保护</li>
+<li>地址映射</li>
+<li>内存扩充</li>
+</ul>
+</li>
+<li>3.设备管理功能<ul>
+<li>缓冲管理</li>
+<li>设备分配</li>
+<li>设备处理<ul>
+<li>设备处理程序又称设备驱动程序</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>4.文件管理功能<ul>
+<li>文件存储空间的管理</li>
+<li>目录管理</li>
+<li>文件的读写管理和保护</li>
+</ul>
+</li>
+<li>5.操作系统与用户之间的接口<ul>
+<li>用户接口</li>
+<li>程序接口</li>
+</ul>
+</li>
+<li>6.现代操作系统的新功能<ul>
+<li>系统安全</li>
+<li>网络的功能和服务</li>
+<li>支持多媒体<h3 id="5-OS结构设计"><a href="#5-OS结构设计" class="headerlink" title="5.OS结构设计"></a>5.OS结构设计</h3></li>
+</ul>
+</li>
+<li>传统操作系统结构<ul>
+<li>无结构操作系统</li>
+<li>模块化OS</li>
+<li>分层式结构OS</li>
+</ul>
+</li>
+<li>微内核os结构<ul>
+<li>客户/服务器模式</li>
+<li>面对对象的程序设计<h2 id="第二章进程的描述与控制"><a href="#第二章进程的描述与控制" class="headerlink" title="第二章进程的描述与控制"></a>第二章进程的描述与控制</h2><h3 id="前驱图和程序执行"><a href="#前驱图和程序执行" class="headerlink" title="前驱图和程序执行"></a>前驱图和程序执行</h3><h3 id="程序并发执行"><a href="#程序并发执行" class="headerlink" title="程序并发执行"></a>程序并发执行</h3></li>
+</ul>
+</li>
+<li>程序的并发执行</li>
+<li>程序并发执行时的特征<ul>
+<li>间断性</li>
+<li>失去封闭性</li>
+<li>不可再现性<h3 id="进程的描述"><a href="#进程的描述" class="headerlink" title="进程的描述"></a>进程的描述</h3></li>
+</ul>
+</li>
+<li>进程的定义<ul>
+<li>进程是程序的一次执行</li>
+<li>进程是一个程序及其数据在处理机上顺序执行时所发生的活动</li>
+<li>进程是具有独立功能的程序在一个数据集合上运行的过程，它是系统进行资源分配和调度的一个独立单位</li>
+</ul>
+</li>
+<li>进程的组成<ul>
+<li>PCB（进程存在的唯一标识）<ul>
+<li>进程描述信息</li>
+<li>进程控制和管理信息</li>
+<li>资源分配清单</li>
+<li>处理机相关信息</li>
+</ul>
+</li>
+<li>程序段<ul>
+<li>程序的代码（指令序列）</li>
+</ul>
+</li>
+<li>数据段<ul>
+<li>运行过程中产生的各种数据</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>进程的特征<ul>
+<li>动态性（进程的<strong>最基本特性</strong>）</li>
+<li>并发性</li>
+<li>独立性（进程是能够独立运行、独立获取资源、独立接受调度的基本单位）</li>
+<li>异步性</li>
+<li>结构性</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>python爬取qosmos网站信息</title>
     <url>/2020/04/27/python%E7%88%AC%E5%8F%96qosmos%E7%BD%91%E7%AB%99%E4%BF%A1%E6%81%AF/</url>
     <content><![CDATA[<h1 id="页面数据分析"><a href="#页面数据分析" class="headerlink" title="页面数据分析"></a>页面数据分析</h1><p>获取网站页面信息，首先确定数据位置：<br><img src="/2020/04/27/python爬取qosmos网站信息/proto-list.png" alt="list_pos"></p>

@@ -107,7 +107,7 @@
 <meta property="og:image" content="http://yoursite.com/2020/06/09/物联网协议/mqtt_header.png">
 <meta property="og:image" content="http://yoursite.com/2020/06/09/物联网协议/mqtt_stru.png">
 <meta property="og:image" content="http://yoursite.com/2020/06/09/物联网协议/mqtt_header_changable.png">
-<meta property="og:updated_time" content="2020-06-09T07:02:56.049Z">
+<meta property="og:updated_time" content="2020-06-30T08:28:34.141Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="物联网协议">
 <meta name="twitter:description" content="CoAP协议受限应用协议(CoAP)是一种专门针对受限设备的Internet应用协议，定义在RFC 7252中。它使那些被称为“节点”的受限设备能够使用类似的协议与更广泛的Internet通信。 协议识别规则CoAP是一个完整的二进制应用层协议，默认运行在UDP上，端口为5683和5684。CoAP数据包格式如果省略令牌、选项和有效负载，最小的CoAP消息长度为4字节。CoAP使用简单的二进制基本">
@@ -384,12 +384,24 @@
                 
               
 
-              <time title="Created: 2020-06-09 14:53:48 / Modified: 15:02:56" itemprop="dateCreated datePublished" datetime="2020-06-09T14:53:48+08:00">2020-06-09</time>
+              <time title="Created: 2020-06-09 14:53:48" itemprop="dateCreated datePublished" datetime="2020-06-09T14:53:48+08:00">2020-06-09</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2020-06-30 16:28:34" itemprop="dateModified" datetime="2020-06-30T16:28:34+08:00">2020-06-30</time>
               
             
           </span>
@@ -436,7 +448,6 @@
         <h1 id="CoAP协议"><a href="#CoAP协议" class="headerlink" title="CoAP协议"></a>CoAP协议</h1><p>受限应用协议(CoAP)是一种专门针对受限设备的Internet应用协议，定义在RFC 7252中。它使那些被称为“节点”的受限设备能够使用类似的协议与更广泛的Internet通信。</p>
 <h2 id="协议识别规则"><a href="#协议识别规则" class="headerlink" title="协议识别规则"></a>协议识别规则</h2><p>CoAP是一个完整的二进制应用层协议，默认运行在UDP上，端口为5683和5684。<br>CoAP数据包格式<br>如果省略令牌、选项和有效负载，最小的CoAP消息长度为4字节。CoAP使用简单的二进制基本头格式，利用了两种消息类型:请求和响应。基本标头后面可以跟着优化的类型-长度-值格式的选项。CoAP默认绑定到UDP，也可以绑定到DTLS，提供了高水平的通信安全性。</p>
 <h2 id="CoAP首部"><a href="#CoAP首部" class="headerlink" title="CoAP首部"></a>CoAP首部</h2><p><img src="/2020/06/09/物联网协议/coap_header.png" alt="coap_header"><br>•    【Ver】版本编号。<br>•    【T】报文类型，CoAP协议定了4种不同形式的报文，CON报文，NON报文，ACK报文和RST报文。<br>•    【TKL】CoAP标识符长度。CoAP协议中具有两种功能相似的标识符，一种为Message ID(报文编号)，一种为Token(标识符)。其中每个报文均包含消息编号，但是标识符对于报文来说是非必须的。<br>•    【Code】功能码/响应码。Code在CoAP请求报文和响应报文中具有不同的表现形式，Code占一个字节，它被分成了两部分，前3位一部分，后5位一部分，为了方便描述它被写成了c.dd结构。其中0.XX表示CoAP请求的某种方法，而2.XX、4.XX或5.XX则表示CoAP响应的某种具体表现。<br>•    【Message ID】报文编号。<br>•    【Token】标识符具体内容，通过TKL指定Token长度。<br>•    【Option】报文选项，通过报文选项可设定CoAP主机，CoAP URI，CoAP请求参数和负载媒体类型等等。<br>•    【1111 1111B】CoAP报文和具体负载之间的分隔符。<br>Code请求方法<br>•    GET：获取资源<br>•    POST：创建资源<br>•    PUT：更新资源<br>•    DELETE：删除资源</p>
-<h2 id="考虑解析字段"><a href="#考虑解析字段" class="headerlink" title="考虑解析字段"></a>考虑解析字段</h2><p>•    报文类型(type)<br>•    功能码(code)<br>•    报文编码(message ID)</p>
 <h1 id="MQTT协议"><a href="#MQTT协议" class="headerlink" title="MQTT协议"></a>MQTT协议</h1><p>协议就是通信双方的一个约定。在MQTT协议中，一个MQTT数据包由：固定头（Fixed header）、 可变头（Variable header）、 消息体（payload）三部分构成。</p>
 <h2 id="协议识别规则-1"><a href="#协议识别规则-1" class="headerlink" title="协议识别规则"></a>协议识别规则</h2><p>端口1883，ssl-mqtt默认端口为8883。</p>
 <h2 id="MQTT-数据包结构"><a href="#MQTT-数据包结构" class="headerlink" title="MQTT 数据包结构"></a>MQTT 数据包结构</h2><p>•    固定头（Fixed header），存在于所有MQTT数据包中，表示数据包类型及数据包的分组类标识<br>•    可变头（Variable header），存在于部分MQTT数据包中，数据包类型决定了可变头是否存在及其具体内容<br>•    消息体（Payload），存在于部分MQTT数据包中，表示客户端收到的具体内容</p>
@@ -445,8 +456,18 @@
 <h4 id="1-2-标识位"><a href="#1-2-标识位" class="headerlink" title="1.2 标识位"></a>1.2 标识位</h4><p>固定报头第1个字节的剩余的4位 [3-0]包含每个MQTT控制报文类型特定的标志。</p>
 <h4 id="1-3-剩余长度（Remaining-Length）"><a href="#1-3-剩余长度（Remaining-Length）" class="headerlink" title="1.3 剩余长度（Remaining Length）"></a>1.3 剩余长度（Remaining Length）</h4><p>位置：从第2个字节开始。<br>剩余长度（Remaining Length）表示当前报文剩余部分的字节数，包括可变报头和负载的数据。剩余长度不包括用于编码剩余长度字段本身的字节数。</p>
 <h3 id="2-MQTT可变头"><a href="#2-MQTT可变头" class="headerlink" title="2 MQTT可变头"></a>2 MQTT可变头</h3><p>MQTT数据包中包含一个可变头，它驻位于固定的头和负载之间。可变头的内容因数据包类型而不同，较常的应用是做为包的标识：<br><img src="/2020/06/09/物联网协议/mqtt_header_changable.png" alt="mqtt_header2"><br>很多类型数据包中都包括一个2字节的数据包标识字段，这些类型的包有：PUBLISH (QoS &gt; 0)、PUBACK、PUBREC、PUBREL、PUBCOMP、SUBSCRIBE、SUBACK、UNSUBSCRIBE、UNSUBACK</p>
-<h3 id="3-有效载荷-Payload"><a href="#3-有效载荷-Payload" class="headerlink" title="3  有效载荷 Payload"></a>3  有效载荷 Payload</h3><p>有效载荷Payload位MQTT数据包的第三部分，CONNECT、SUBSCRIBE、SUBACK、UNSUBSCRIBE四种类型的消息<br>有消息体：<br>•    CONNECT，消息体内容主要是：客户端的ClientID、订阅的Topic、Message以及用户名和密码。<br>•    SUBSCRIBE，消息体内容是一系列的要订阅的主题以及QoS。<br>•    SUBACK，消息体内容是服务器对于SUBSCRIBE所申请的主题及QoS进行确认和回复。<br>•    UNSUBSCRIBE，消息体内容是要订阅的主题。</p>
-<h2 id="考虑解析字段-1"><a href="#考虑解析字段-1" class="headerlink" title="考虑解析字段"></a>考虑解析字段</h2><p>•    控制报文的类型<br>•    消息体</p>
+<h3 id="3-有效载荷-Payload"><a href="#3-有效载荷-Payload" class="headerlink" title="3 有效载荷 Payload"></a>3 有效载荷 Payload</h3><p>有效载荷Payload位MQTT数据包的第三部分，CONNECT、SUBSCRIBE、SUBACK、UNSUBSCRIBE四种类型的消息<br>有消息体：<br>•    CONNECT，消息体内容主要是：客户端的ClientID、订阅的Topic、Message以及用户名和密码。<br>•    SUBSCRIBE，消息体内容是一系列的要订阅的主题以及QoS。<br>•    SUBACK，消息体内容是服务器对于SUBSCRIBE所申请的主题及QoS进行确认和回复。<br>•    UNSUBSCRIBE，消息体内容是要订阅的主题。</p>
+<h3 id="4-消息体长度-Msg-Len"><a href="#4-消息体长度-Msg-Len" class="headerlink" title="4 消息体长度 Msg_Len"></a>4 消息体长度 Msg_Len</h3><p>首先需要了解varints。Varint是一种使用一个或多个字节序列化整数的方法。较小的数字占用较少的字节数。</p>
+<p>除了最后一个字节外，varint中的每个字节都设置了最高有效位（msb）–这表明还会有其他字节。每个字节的低7位用于以7位为一组存储数字的二进制补码表示，最低有效组在前。</p>
+<p>因此，例如，这里是数字1 –它是一个字节，因此未设置msb：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0000 0001</span><br></pre></td></tr></table></figure></p>
+<p>这是300 –这有点复杂：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1010 1100 0000 0010</span><br></pre></td></tr></table></figure></p>
+<p>您如何确定这是300？首先，从每个字节中删除msb，因为这是在告诉我们是否已到达数字的末尾（如您所见，它在第一个字节中设置，因为varint中有多个字节） ：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> 1010 1100 0000 0010   </span><br><span class="line">→ 010 1100 000 0010</span><br></pre></td></tr></table></figure></p>
+<p>反转两组7位，因为您记得，varint存储数字时最低有效组在前。然后，将它们连接起来以获得最终值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">000 0010 010 1100   </span><br><span class="line">→ 000 0010 ++ 010 1100    </span><br><span class="line">→ 100101100</span><br><span class="line">→ 256 + 32 + 8 + 4 = 300</span><br></pre></td></tr></table></figure></p>
+<p>讯息结构<br>如您所知，协议缓冲区消息是一系列键值对。消息的二进制版本仅使用字段的编号作为关键字-每个字段的名称和声明的类型只能在解码端通过引用消息类型的定义（即.proto文件）来确定。</p>
+<p>对消息进行编码后，键和值将串联成一个字节流。解码消息时，解析器需要能够跳过无法识别的字段。这样，可以将新字段添加到消息中，而不会破坏不知道它们的旧程序。为此，有线格式消息中每对的“键”实际上是两个值– .proto文件中的字段编号，加上提供的信息恰好足以找到以下值的长度的有线类型。在大多数语言实现中，此键称为标签。</p>
+<p>流式消息中的每个键都是具有值的varint- (field_number &lt;&lt; 3) | wire_type换句话说，数字的最后三位用于存储导线类型。</p>
+<p>现在，让我们再来看一个简单的例子。您现在知道流中的第一个数字始终是varint键，这里是08，或者（删除msb）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">000 1000</span><br></pre></td></tr></table></figure></p>
+<p>使用最后三位获得类型（0），然后右移三位以获得字段编号（1）。因此，您现在知道字段号为1，并且以下值为varint。使用上一节中的varint解码知识，您可以看到接下来的两个字节存储值150。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">96 01 = 1001 0110 0000 0001      </span><br><span class="line">       → 000 0001 ++ 001 0110 （删除msb并反转7 位组）        </span><br><span class="line">       → 10010110 </span><br><span class="line">       → 128 + 16 + 4 + 2 = 150</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -486,6 +507,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/06/09/Wireshark代码解析/" rel="prev" title="Wireshark代码解析">
+                Wireshark代码解析 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -555,7 +580,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -643,7 +668,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CoAP协议"><span class="nav-number">1.</span> <span class="nav-text">CoAP协议</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#协议识别规则"><span class="nav-number">1.1.</span> <span class="nav-text">协议识别规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CoAP首部"><span class="nav-number">1.2.</span> <span class="nav-text">CoAP首部</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#考虑解析字段"><span class="nav-number">1.3.</span> <span class="nav-text">考虑解析字段</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MQTT协议"><span class="nav-number">2.</span> <span class="nav-text">MQTT协议</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#协议识别规则-1"><span class="nav-number">2.1.</span> <span class="nav-text">协议识别规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MQTT-数据包结构"><span class="nav-number">2.2.</span> <span class="nav-text">MQTT 数据包结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-MQTT固定头"><span class="nav-number">2.2.1.</span> <span class="nav-text">1 MQTT固定头</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-MQTT数据包类型"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">1.1 MQTT数据包类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-标识位"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">1.2 标识位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-剩余长度（Remaining-Length）"><span class="nav-number">2.2.1.3.</span> <span class="nav-text">1.3 剩余长度（Remaining Length）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-MQTT可变头"><span class="nav-number">2.2.2.</span> <span class="nav-text">2 MQTT可变头</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-有效载荷-Payload"><span class="nav-number">2.2.3.</span> <span class="nav-text">3  有效载荷 Payload</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#考虑解析字段-1"><span class="nav-number">2.3.</span> <span class="nav-text">考虑解析字段</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#CoAP协议"><span class="nav-number">1.</span> <span class="nav-text">CoAP协议</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#协议识别规则"><span class="nav-number">1.1.</span> <span class="nav-text">协议识别规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CoAP首部"><span class="nav-number">1.2.</span> <span class="nav-text">CoAP首部</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MQTT协议"><span class="nav-number">2.</span> <span class="nav-text">MQTT协议</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#协议识别规则-1"><span class="nav-number">2.1.</span> <span class="nav-text">协议识别规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MQTT-数据包结构"><span class="nav-number">2.2.</span> <span class="nav-text">MQTT 数据包结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-MQTT固定头"><span class="nav-number">2.2.1.</span> <span class="nav-text">1 MQTT固定头</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-MQTT数据包类型"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">1.1 MQTT数据包类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-标识位"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">1.2 标识位</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-剩余长度（Remaining-Length）"><span class="nav-number">2.2.1.3.</span> <span class="nav-text">1.3 剩余长度（Remaining Length）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-MQTT可变头"><span class="nav-number">2.2.2.</span> <span class="nav-text">2 MQTT可变头</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-有效载荷-Payload"><span class="nav-number">2.2.3.</span> <span class="nav-text">3 有效载荷 Payload</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-消息体长度-Msg-Len"><span class="nav-number">2.2.4.</span> <span class="nav-text">4 消息体长度 Msg_Len</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

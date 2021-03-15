@@ -4,7 +4,8 @@
     <title>Wireshark使用建议</title>
     <url>/2021/03/15/Wireshark%E4%BD%BF%E7%94%A8%E5%BB%BA%E8%AE%AE/</url>
     <content><![CDATA[<p>基于平时学习，总结几点wireshark使用建议。</p>
-<h1 id="抓包"><a href="#抓包" class="headerlink" title="抓包"></a>抓包</h1><p>安装好Wireshark之后，启动Wireshark并在界面想抓的链路，例如本机开启wifi后在<code>控制面板\所有控制面板项\网络连接</code>中可查看开启热点网络。选择抓取网络：<br><img src="/2021/03/15/Wireshark使用建议/首页.png" alt="选取网络"><br>双击开始抓包后，可在笔记本或终端操作，此时wireshark便抓取了整个链路数据，例如：<br><img src="/2021/03/15/Wireshark使用建议/抓包.png" alt="一条完整链路"><br>显示的是访问http明文网站所产生的完整的链路数据。</p>
+<h1 id="首页"><a href="#首页" class="headerlink" title="首页"></a>首页</h1><p>安装好Wireshark之后，启动Wireshark并在界面想抓的链路，例如本机开启wifi后在<code>控制面板\所有控制面板项\网络连接</code>中可查看开启热点网络。选择抓取网络：<br><img src="/2021/03/15/Wireshark使用建议/首页.png" alt="选取网络"></p>
+<h1 id="抓包"><a href="#抓包" class="headerlink" title="抓包"></a>抓包</h1><p>双击开始抓包后，可在笔记本或终端操作，此时wireshark便抓取了整个链路数据，例如：<br><img src="/2021/03/15/Wireshark使用建议/抓包.png" alt="一条完整链路"><br>显示的是访问http明文网站所产生的完整的链路数据。头三个包是TCP三次握手，接着是一个HTTP包，即为访问网页所产生的HTTP数据。</p>
 <p>Wireshark基本操作网上比比皆是，以下列举几个讲解较全的：</p>
 <ul>
 <li>[1] <a href="https://zhuanlan.zhihu.com/p/31512066" target="_blank" rel="noopener">操作建议</a></li>

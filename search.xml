@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>wireshar使用参考手册</title>
-    <url>/2021/03/15/wireshar%E4%BD%BF%E7%94%A8%E5%8F%82%E8%80%83%E6%89%8B%E5%86%8C/</url>
-    <content><![CDATA[<h1 id="Wireshark使用建议"><a href="#Wireshark使用建议" class="headerlink" title="Wireshark使用建议"></a>Wireshark使用建议</h1><p>Wireshark基本操作网上比比皆是，以下列举几个讲解较全的：</p>
+    <title>Wireshark使用建议</title>
+    <url>/2021/03/15/Wireshark%E4%BD%BF%E7%94%A8%E5%BB%BA%E8%AE%AE/</url>
+    <content><![CDATA[<p>基于平时学习，总结几点wireshark使用建议。</p>
+<h1 id="抓包"><a href="#抓包" class="headerlink" title="抓包"></a>抓包</h1><p>安装好Wireshark之后，启动Wireshark并在界面想抓的链路，例如本机开启wifi后在<code>控制面板\所有控制面板项\网络连接</code>中可查看开启热点网络。选择抓取网络：</p>
+<p>Wireshark基本操作网上比比皆是，以下列举几个讲解较全的：</p>
 <ul>
 <li>[1] <a href="https://zhuanlan.zhihu.com/p/31512066" target="_blank" rel="noopener">操作建议</a></li>
 </ul>

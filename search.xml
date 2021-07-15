@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>深度需求分析</title>
+    <url>/2021/07/15/%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86/</url>
+    <content><![CDATA[<h1 id="软件需求工程"><a href="#软件需求工程" class="headerlink" title="软件需求工程"></a>软件需求工程</h1><p>指在工程设计过程中定义、记录和维护需求的过程。首先要需求工程范畴：<br><img src="/2021/07/15/项目管理/软件需求工程.png" alt="需求工程范畴"></p>
+<ul>
+<li>需求开发工作要点<br>通过需求获取、需求分析、编写规约和需求验证4个具体活动多次循环的形式进行需求开发。</li>
+</ul>
+<h1 id="login-BDD-Example"><a href="#login-BDD-Example" class="headerlink" title="login BDD Example"></a>login BDD Example</h1><p>BDD是一种以沟通为核心的敏捷软件开发方法，通过开发者与产品既得利益者（或其代表）之间不断的沟通，用一种双方都能理解的语言来定义和明确features。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Feature: Login</span><br><span class="line"></span><br><span class="line">  I want to login on Keepfy</span><br><span class="line"></span><br><span class="line">  Background:</span><br><span class="line">    Given I go to &apos;/login&apos;</span><br><span class="line">    And the field &apos;email&apos; is empty</span><br><span class="line">    And the field &apos;password&apos; is empty</span><br><span class="line"></span><br><span class="line">  Scenario: Error on empty fields</span><br><span class="line">    When I click on &apos;enter&apos;</span><br><span class="line">    Then field &apos;email&apos; should be with error</span><br><span class="line">    And field &apos;password&apos; should be with error</span><br><span class="line"></span><br><span class="line">  Scenario: Wrong password</span><br><span class="line">    When I type &apos;john.test@keepfy.com&apos; in &apos;email&apos;</span><br><span class="line">    And I type &apos;123456&apos; in &apos;password&apos;</span><br><span class="line">    And I click on &apos;enter&apos;</span><br><span class="line">    Then I should see &apos;E-mail or password is incorrect&apos;</span><br><span class="line"></span><br><span class="line">  Scenario: Login successfully</span><br><span class="line">    Given I have users:</span><br><span class="line">      | name           | email             | password |</span><br><span class="line">      | Vitor Batista  | vitor@keepfy.com  | abcdef   |</span><br><span class="line">    When I type &apos;vitor@keepfy.com&apos; in &apos;email&apos;</span><br><span class="line">    And I type &apos;abcdef&apos; in &apos;password&apos;</span><br><span class="line">    And I click on &apos;enter&apos;</span><br><span class="line">    Then I shouldn&apos;t see &apos;Access your account&apos;</span><br><span class="line"> to join this conversation on GitHub. Alre</span><br></pre></td></tr></table></figure></p>
+<h2 id="BDD-描述"><a href="#BDD-描述" class="headerlink" title="BDD 描述"></a>BDD 描述</h2><p><img src="/2021/07/15/项目管理/BDD.png" alt="BDD"></p>
+<h3 id="三个核心概念"><a href="#三个核心概念" class="headerlink" title="三个核心概念"></a>三个核心概念</h3><p>Feature、Scenario、Steps是BDD的三个核心概念，体现了BDD的三个重要价值：</p>
+<ul>
+<li>Living Document</li>
+<li>Executable Specification by Example(SbE)</li>
+<li>Automated Tests</li>
+</ul>
+<h4 id="Feature"><a href="#Feature" class="headerlink" title="Feature"></a>Feature</h4><p>Feature就像是文档一样，描述了功能特性、角色、以及 最重要的商业价值。</p>
+<h4 id="Scenario"><a href="#Scenario" class="headerlink" title="Scenario"></a>Scenario</h4><p>场景就是上面提到的规范Specification。Cucumber提供了Scenario、Scenario Outline两种形式。</p>
+<h4 id="Steps"><a href="#Steps" class="headerlink" title="Steps"></a>Steps</h4><p>Steps就是实际编码。</p>
+<h2 id="敏捷中的BDD"><a href="#敏捷中的BDD" class="headerlink" title="敏捷中的BDD"></a>敏捷中的BDD</h2><h1 id="CBM方法论"><a href="#CBM方法论" class="headerlink" title="CBM方法论"></a>CBM方法论</h1><p>一种对企业进行建模和分析的技术。它是业务组件或“构建块”的逻辑表示或映射，可以在单个页面上进行描述。它可用于分析企业战略与组织能力和投资的一致性，识别冗余或重叠的业务能力，分析不同组件，确定优先级，以及映射到其他架构领域，即可帮助管理者评估整个企业的目标和战略，同时有效利用内、外部专业化的优势。。</p>
+<ul>
+<li>CBM 对比 TOGAF [<a href="https://dominoweb.draco.res.ibm.com/reports/rj10451.pdf" target="_blank" rel="noopener">https://dominoweb.draco.res.ibm.com/reports/rj10451.pdf</a>]<br><img src="/2021/07/15/项目管理/CBMvsTOGAF.png" alt="CBMvsTO"></li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
     <title>Data-Struction-Linked-List工程中应用</title>
     <url>/2021/05/24/Data-Struction-Linked-List%E5%B7%A5%E7%A8%8B%E4%B8%AD%E5%BA%94%E7%94%A8/</url>
     <content><![CDATA[<h1 id="Linked-List"><a href="#Linked-List" class="headerlink" title="Linked List"></a>Linked List</h1><p>简而言之，链表由node组成，每个node包含data value和next指向下一个node的指针。相比于数据，增删改时间复杂度为N（0），但查询复杂度为N（n）。为提高查询速度类似Redis中采用了Skip List。<br><img src="/2021/05/24/Data-Struction-Linked-List工程中应用/Linkedlist.png" alt="linked-list"><br><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> data;</span><br><span class="line">    Node* next;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
